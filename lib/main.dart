@@ -18,9 +18,11 @@ class _HomeState extends State<Home> {
     setState(() {
       _people += delta;
       if (_people < 0) {
-        _infoText = "Mundo invertido?";
+        _people = 0;
+        //_infoText = "Mundo invertido?";
       } else {
-        if (_people > 10) {
+        if (_people >= 10) {
+          _people = 10;
           _infoText = "Lotação esgotada";
         } else {
           _infoText = "Pode entrar!";
@@ -50,21 +52,23 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(20),
                   child: FlatButton(
                     child: Text("+1",
                         style:
-                            TextStyle(fontSize: 40, color: Colors.green[400])),
+                            TextStyle(fontSize: 60, color: Colors.green[400],
+                            fontWeight: FontWeight.bold)),
                     onPressed: () {
                       _changePeople(1);
                     }
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(20),
                   child: FlatButton(
                     child: Text("-1",
-                        style: TextStyle(fontSize: 40, color: Colors.red[400])),
+                        style: TextStyle(fontSize: 60, color: Colors.red[400],
+                        fontWeight: FontWeight.bold)),
                     onPressed: () {
                       _changePeople(-1);
                     },
