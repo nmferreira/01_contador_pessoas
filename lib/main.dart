@@ -4,7 +4,7 @@ void main() {
   runApp(MaterialApp(
     title: "Contador de Pessoas",
     home: Container(
-      color: Colors.white
+      color: Colors.blueGrey
     )
   ));
 }
